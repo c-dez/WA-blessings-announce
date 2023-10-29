@@ -3,12 +3,25 @@ function()
     local name
     local confirmationText
 
-    local name, rank, icon, count, dispelType,
-     duration, expires, caster, isStealable,
-      nameplateShowPersonal, spellID, canApplyAura,
-       isBossDebuff, _, nameplateShowAll, timeMod, 
-       value1, value2, value3
-       =UnitBuff('unit', 'name' , 'INDEX', 'HELPFUL')
+    for i=0,3,1 -- check buff on  party 1...3
+    do
+        if i==1 then
+            local unitId = 'player' --changed for testing
+            for i = 1, 10, 1 do
+                name = UnitBuff(unitId, i)
+                if name == 'Blessing of Freedom' then
+                    print(name.. i)
+                    return name
+                end
+            end
+            
+        end
+       
+
+
+    end
+
+
 
 
 end
