@@ -10,11 +10,10 @@ function()
                 name = UnitBuff(unitId, i)
                 if name == 'Blessing of Freedom' then
                     target = nameString
-                    return target
+                    return target,name
                 end
             end
         end
-        
         if i ==2 then
             for i = 1, 10, 1 do
                 local unitId = 'party2'
@@ -22,15 +21,17 @@ function()
                 name = UnitBuff(unitId, i)
                 if name == 'Blessing of Freedom' then
                     target = nameString
-                    return target
-                    
+                    print('o')
+                    SendChatMessage('Freedom on '..target, 'SAY')
+                    --' party2 working with chat announce'
+                    --check readme for instructions how to fix
+                    --triggers and not having update each frame*pending
+                    return target, name
                 end
             end
         end
-        
-        
     end
-    print(target)
-    return target
-    
-end
+    return target, name
+end--working
+
+
