@@ -10,6 +10,7 @@ function()
                 name = UnitBuff(unitId, i)
                 if name == 'Blessing of Freedom' then
                     target = nameString
+                    SendChatMessage('Freedom on '..target, 'SAY')
                     return target,name
                 end
             end
@@ -21,7 +22,6 @@ function()
                 name = UnitBuff(unitId, i)
                 if name == 'Blessing of Freedom' then
                     target = nameString
-                    print('o')
                     SendChatMessage('Freedom on '..target, 'SAY')
                     --' party2 working with chat announce'
                     --check readme for instructions how to fix
